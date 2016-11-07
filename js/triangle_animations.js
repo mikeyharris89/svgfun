@@ -1,12 +1,22 @@
-(function() {
+(function($) {
+  $previousSize = window.innerWidth;
 
-  window.addEventListener('resize', updateTriangles);
+  window.addEventListener('resize', function() {
+    updateTriangles();
+  });
 
   var updateTriangles = function() {
-    console.log("functions!")
+    var currentWidth = window.innerWidth;
+    var changeWidths = $previousSize - currentWidth;
+
+    var triangle = $('.triangle'),
+        width = triangle.outerWidth();
+    var newWidth = changeWidths + width;
+
+
+    var height = newWidth / Math.sqrt(3);
+    var newPath = "0 100%, 0 " + (800 - height) + "px, " + newWidth + "px 100%"
+    triangle.css({"clip-path": newPath})
   }
 
-  window.addEventListener('click', function() {
-   console.log("hay")
- })
-});
+}(jQuery));
