@@ -38,5 +38,4 @@
         rightTriangle.css({"clip-path": newPath});
   }
 
-
 }(jQuery));

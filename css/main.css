@@ -1,6 +1,10 @@
+body {
+  position: relative;
+}
+
 .first-head {
 
-  height: 800px;
+  height: 600px;
   position: relative;
 }
 
@@ -9,21 +13,20 @@
   height: 500px;
 }
 
-.left-triangle {
-  background: blue;
-}
-
 .right-triangle {
   background: #00FFFF;
-  height: 800px;
+  height: 600px;
   width: 80%;
   position: absolute;
+  z-index: -11;
+  right: 0;
 }
 .triangle {
   background: blue;
-  height: 800px;
+  height: 600px;
   width: 60%;
-  z-index: 10;
+  z-index: -10;
+  position: absolute;
 }
 
 .clip-wrap {
@@ -42,4 +45,10 @@ div.right-triangle {
   clip-path: polygon(100% 100%, 0 100%, 100% 20%);
   -webkit-clip-path: url("#clip-shape2"); /* required for Webkit/Blink browsers if you're using only inline SVG clipping paths, but not CSS clip-path */
   clip-path: url("#clip-shape2");
+}
+
+.text {
+  position: relative;
+  z-index: 10;
+  top: 500px;
 }
